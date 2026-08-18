@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: perf-study-db
+    command: postgres -c shared_preload_libraries=pg_stat_statements
+    environment:
+      POSTGRES_DB: perfstudy
+      POSTGRES_USER: perf
+      POSTGRES_PASSWORD: perf
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U perf -d perfstudy"]
+      interval: 5s
+      timeout: 3s
+      retries: 120
+
+volumes:
+  pgdata:

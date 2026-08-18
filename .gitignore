@@ -1,0 +1,19 @@
+# 정답지 — 절대 커밋 금지
+.answers/
+
+# Gradle / build
+app/.gradle/
+app/build/
+app/bin/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# k6 결과물
+load/results/
+
+# 변환된 HTML (붙여넣기용 임시 산출물)
+drafts/html/
