@@ -25,6 +25,33 @@
 3. 저장된 100개 숫자(load/results/*.txt)로 **직접**: 정렬해서 p50/p95/p99 집기(몇 번째 줄인지 + 이유), 평균 계산해서 p50과 비교, 정렬 전 순서에서 패턴 관찰
 4. 숫자 3개 들고 오면: 본인 말 재설명(4단계 규칙의 마무리) → progress.md 기록 → `scripts/make-draft.sh 01` → 블로그 초안 → draft PR
 
+## 저장소 구조
+
+```
+perf-study/
+├── CLAUDE.md          # 교사 역할 규칙 — 깃에 포함. clone하면 새 세션에 자동 적용됨
+├── STATUS.md          # (이 파일) 세션 간 진행상황 — 새 세션은 여기부터 읽는다
+├── README.md          # 프로젝트 개요 + 실행법
+├── curriculum.md      # 16주 계획
+├── progress.md        # 주차별 학습 기록 (가설/측정/before/after — 가설은 사용자만 씀)
+├── info.md            # 최초 셋업 요청서 (참고용 원본)
+├── app/               # 토이 앱 (Spring Boot 3 + Java 21)
+│   ├── docker-compose.yml       # PostgreSQL 16, 포트 5433
+│   ├── db/init/01-init.sql      # 스키마 + 더미 데이터 시드 (최초 기동 시 자동 실행)
+│   └── src/main/java/dev/perfstudy/app/   # controller / service / repository / entity / dto
+├── load/
+│   ├── baseline.js    # k6 부하 스크립트 (2주차부터 사용)
+│   └── results/       # 측정 결과 저장소 (gitignore — 기기별 로컬)
+├── scripts/
+│   ├── measure.sh     # 응답시간 N회 측정, 원본만 출력 (1주차 실습용)
+│   ├── make-draft.sh  # progress.md → drafts/week-NN.md 블로그 초안 생성
+│   └── md2tistory.mjs # 초안 → 티스토리 붙여넣기용 HTML (md2tistory.sh)
+├── drafts/            # 블로그 초안 (주차별로 생성됨)
+└── .answers/          # 정답지 — gitignore. 메인 기기(회사 노트북)에만 존재
+```
+
+깃에 **안 올라가는 것**: `.answers/`(정답지), `load/results/`(측정 결과), `app/build/` 등 빌드 산출물, `drafts/html/`(변환 산출물). 이 중 측정 결과는 기기별 로컬이 정상이고, 수치는 progress.md에 옮겨 적는 것으로 공유한다.
+
 ## 새 기기 셋업 (최초 1회)
 
 ```bash
