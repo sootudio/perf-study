@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 사용법: scripts/measure.sh "http://localhost:8080/api/posts?page=0&size=20" [횟수]
+# 사용법: scripts/measure.sh "http://localhost:18080/api/posts?page=0&size=20" [횟수]
 # 지정한 URL에 순차로 N번 요청을 보내고 응답시간(초) 원본을 그대로 저장한다.
 # 정렬/백분위 계산은 하지 않는다 — 그건 학습자의 몫.
 set -euo pipefail

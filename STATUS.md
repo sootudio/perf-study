@@ -20,7 +20,7 @@
    ```bash
    cd app && docker compose up -d      # DB (최초 기동이면 시드에 수 분)
    cd app && ./gradlew bootRun          # 앱 (별도 터미널)
-   scripts/measure.sh "http://localhost:8080/api/posts?page=0&size=20" 100
+   scripts/measure.sh "http://localhost:18080/api/posts?page=0&size=20" 100
    ```
 3. 저장된 100개 숫자(load/results/*.txt)로 **직접**: 정렬해서 p50/p95/p99 집기(몇 번째 줄인지 + 이유), 평균 계산해서 p50과 비교, 정렬 전 순서에서 패턴 관찰
 4. 숫자 3개 들고 오면: 본인 말 재설명(4단계 규칙의 마무리) → progress.md 기록 → `scripts/make-draft.sh 01` → 블로그 초안 → draft PR

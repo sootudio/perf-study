@@ -5,7 +5,7 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
 
-const BASE = __ENV.BASE_URL || 'http://localhost:8080';
+const BASE = __ENV.BASE_URL || 'http://localhost:18080';
 const ONLY = __ENV.ONLY || '';
 
 const common = {
