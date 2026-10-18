@@ -50,7 +50,7 @@ perf-study/
 ├── progress.md        # 주차별 학습 기록 (가설/측정/before/after — 가설은 사용자만 씀)
 ├── info.md            # 최초 셋업 요청서 (참고용 원본)
 ├── app/               # 토이 앱 (Spring Boot 3 + Java 21)
-│   ├── docker-compose.yml       # PostgreSQL 16, 포트 5433
+│   ├── docker-compose.yml       # PostgreSQL 16, 포트 5434 (5433은 회사 컨테이너가 사용)
 │   ├── db/init/01-init.sql      # 스키마 + 더미 데이터 시드 (최초 기동 시 자동 실행)
 │   └── src/main/java/dev/perfstudy/app/   # controller / service / repository / entity / dto
 ├── load/

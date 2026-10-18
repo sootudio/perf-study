@@ -96,7 +96,7 @@ progress.md → 주 1회 `drafts/week-NN.md` 생성 (`scripts/make-draft.sh NN` 
 - `.answers/`는 gitignore. 절대 커밋하지 않는다.
 
 ## 토이 앱 (app/)
-- Spring Boot 3 + Java 21 + PostgreSQL(Docker, 포트 5433)
+- Spring Boot 3 + Java 21 + PostgreSQL(Docker, 포트 5434 — 5433은 회사 컨테이너 flow-local-db-ro가 사용)
 - 성능 문제가 의도적으로 심어져 있다. **위치를 먼저 말하지 않는다.**
 - DB 기동: `cd app && docker compose up -d` (최초 기동 시 더미 데이터 시드에 수 분 소요)
 - 앱 기동: `cd app && ./gradlew bootRun`

@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/perfstudy
+    url: jdbc:postgresql://localhost:5434/perfstudy
     username: perf
     password: perf
     hikari:
