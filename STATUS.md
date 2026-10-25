@@ -36,7 +36,7 @@
 ```bash
 cd app && docker compose up -d      # DB (최초 기동이면 시드에 수 분)
 cd app && ./gradlew bootRun          # 앱 (별도 터미널, 포트 18080)
-scripts/measure.sh "http://localhost:18080/api/posts?page=0&size=20" 100
+scripts/measure.sh "http://localhost:28080/api/posts?page=0&size=20" 100
 ```
 
 ## 저장소 구조
